@@ -42,6 +42,20 @@ main{
     color: rgb(30, 215, 96)
 }
 
+aside{
+    text-align: center;
+    grid-column: 1/4;
+}
+
+#btn_logout{
+    height: 30px;
+    width: 12%;
+    background: rgb(230, 33, 33);
+    color: black;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
 a{
     text-align: center;
     text-decoration: none;

@@ -63,3 +63,26 @@ function atualizarEndereco(id) {
 }
 
 document.addEventListener('DOMContentLoaded', listarEnderecos);
+
+async function logout() {
+
+        const token = JSON.parse(localStorage.getItem('user')).access_token;
+
+        const response = await fetch("https://go-wash-api.onrender.com/api/auth/logout", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + token
+            }
+        });
+
+        if (response.ok) {
+            alert("Logout realizado com sucesso.");
+            localStorage.removeItem('user');
+            window.location.href = "index.html";
+        } else {
+            const errorData = await response.json();
+            console.error("Erro ao fazer logout:", errorData);
+            alert(`Erro ao fazer logout: ${errorData.message}`);
+        }
+    }

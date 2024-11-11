@@ -55,7 +55,7 @@ async function cadastro(){
         let resposta = await api.json();
         console.log(resposta)
         alert('Cadastro realizado! Ative a sua conta')
-        window.location.href = 'home.html'
+        window.location.href = 'login.html'
     
     } else {
 
